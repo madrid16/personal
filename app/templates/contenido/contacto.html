@@ -1,0 +1,36 @@
+	<div class="contactoPage">
+		<article>
+			<img src="/media/img/contact.png" style="float:left;" />
+			<h2 class="page-title">Pongase en Contacto</h2>
+			<hr />
+			<p>Creamos hermosos sitios web profesionales, que puedan utilizarse, con mejor accesibilidad a la práctica y las directrices más recientes estándares web del W3C, lo que resulta en la semántica y amigable seo XHTML y CSS.</p>
+		</article>
+
+		<article>
+			<img src="/media/img/information.png" style="float:left;" />
+			<h2 class="page-title">Información de Contacto</h2>
+			<hr />
+			<p><span class="infoGreen">Dirección : </span> Maipú, Santiago <span> / </span> <span class="infoGreen"> Teléfono : </span> (09) 7470248 <span> / </span> <br />
+				<span class="infoGreen"> E-mail : </span> m.madrid16@gmail.com</p>
+		</article>
+		
+		<hr />
+
+		<div>
+	
+			<form method="post" action="/contact" id="form_contact">
+				{% csrf_token %}
+				{{ form }}
+				<div>
+					<input id="btnContact" type="submit" name="btnContact" value="Contáctame" />
+				</div>
+			</form>
+	
+		</div>
+		
+
+		<div>
+			<div id="mapa" style="width:100%;height:600px;"></div>
+		</div>
+		
+	</div>
