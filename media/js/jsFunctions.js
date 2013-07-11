@@ -62,6 +62,8 @@ jQuery(document).on('ready', function(){
 					// jQuery('#main').html(data);					
 				},
 				complete: function(data, dato){
+					console.debug(data);
+					console.debug(dato);
 					if(data.readyState == 4){
 						if(typeof data.responseJSON == 'undefined'){
 							jQuery('.contactoPage').remove();
