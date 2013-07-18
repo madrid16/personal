@@ -83,6 +83,5 @@ def contactValid(request):
 		form = contactForm()
 		return render_to_response('contenido/contacto.html', locals())
 
-# tatianahpppp  tatiana sanches avala
-
-# karla.herrera47
+def mantenimiento(request):
+	return render_to_response('mantenimiento.html', locals())

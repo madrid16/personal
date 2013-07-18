@@ -146,7 +146,7 @@ form .errorlist{
 
 .serviciosPage span a{
 	background-color: #229710; 
-	background-image: url(/media/img/email.png);
+	background-image: url(http://themadrid.cl/static/media/img/email.png);
 	background-position: 98% center;
 	background-repeat: no-repeat;
 	background-size: 34px;
@@ -179,7 +179,7 @@ form .errorlist{
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	border-radius: 5px;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-	color: #f5f5f5;
+	color: #ffffff;
 	cursor: pointer;
 	float: left;
 	margin: 0.5em;
@@ -207,7 +207,7 @@ form .errorlist{
 	/*width: 2.5em;*/
 }
 .spacer{
-	background: url("/media/img/main-spacer-1.png") bottom center no-repeat;
+	background: url("http://themadrid.cl/static/media/img/main-spacer-1.png") bottom center no-repeat;
 	padding: 0em 0 2em 0;
 }
 

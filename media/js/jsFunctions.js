@@ -39,11 +39,11 @@ jQuery(document).on('ready', function(){
 
 	jQuery('.social_media').find('a').hover(function(){
 		var src = jQuery(this).find('img').attr('title');
-		var img = '/media/img/' + src + '_hover.png'
+		var img = 'http://themadrid.cl/static/media/img/' + src + '_hover.png'
 		jQuery(this).find('img').attr('src', img);
 	}, function(){
 		var src = jQuery(this).find('img').attr('title');
-		var img = '/media/img/' + src + '.png'
+		var img = 'http://themadrid.cl/static/media/img/' + src + '.png'
 		jQuery(this).find('img').attr('src', img);
 	});
 	
@@ -170,7 +170,7 @@ function initialize () {
 
     var icono = new google.maps.Marker({
      	   	position: new google.maps.LatLng(-33.5237864105204, -70.78244524999997),
-        	icon: '/media/img/map_marker.png',
+        	icon: 'http://themadrid.cl/static/media/img/map_marker.png',
         	map: map               
     });
 }

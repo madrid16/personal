@@ -8,13 +8,15 @@ from django.conf.urls.static import static
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'app.views.index_view', name='index_view'),
+    url(r'^$', 'app.views.mantenimiento', name='index_view'),
     url(r'^inicio$', 'app.views.inicio', name='inicio'),
     url(r'^contacto$', 'app.views.contact', name='contact'),
     url(r'^contact$', 'app.views.contactValid', name='contactValid'),
     url(r'^nosotros$', 'app.views.nosotrosView', name='nosotrosView'),
     url(r'^proyectos$', 'app.views.proyectosView', name='proyectosView'),
     url(r'^servicios$', 'app.views.serviceView', name='serviceView'),
+    url(r'^mantenimiento$', 'app.views.mantenimiento', name='mantenimientoView'),
+    url(r'^index$', 'app.views.index_view', name='index'),
     # url(r'^personal/', include('personal.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
