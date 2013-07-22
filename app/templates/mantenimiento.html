@@ -56,7 +56,7 @@
         {
             color: #FFFFFF;
             font-family: 'Maven Pro';
-            font-size: 1.2em;
+            font-size: 16px;
             margin-top: 15px;
             text-align: justify;
             margin-bottom: 20px;
@@ -107,7 +107,134 @@
         {
             top: -30px;
         }
-            
+        div.contactBackground
+        {
+            background: url('http://demo.drythemes.com/landerous/landerous_darkblue/images/contact_bg.png');
+            background-repeat: no-repeat;
+            width: 246px;
+            height: 267px;
+            margin-top: 20px;
+            padding: 15px;
+        }
+        input.contactInput
+        {
+            background: url('http://demo.drythemes.com/landerous/landerous_darkblue/images/contact_short_input.png');
+            background-repeat: no-repeat;
+            width: 230px;
+            height: 32px;
+            border: none;
+            padding: 0 10px;
+            display: table-cell;
+            line-height: 32px;
+            font-family: 'Maven Pro';
+            font-size: 13px;
+            color: #A3A3A3;
+        }
+        textarea.contactInput
+        {
+            background: url('http://demo.drythemes.com/landerous/landerous_darkblue/images/contact_long_input.png');
+            background-repeat: no-repeat;
+            width: 230px;
+            min-width: 230px;
+            max-width: 230px;
+            height: 62px;
+            min-height: 62px;
+            max-height: 62px;
+            border: none;
+            padding: 10px;
+            display: block;
+            font-family: 'Maven Pro';
+            font-size: 13px;
+            color: #A3A3A3;
+            overflow: hidden;
+        }
+        div.contactUs ul li
+        {
+            margin-bottom: 15px;
+        }
+        div.about{
+            display:inline-block; vertical-align:top;width:70%;
+        }
+        div.contactUs{
+            display: inline-block;
+            vertical-align: top;
+            width: 25%;
+            margin: 0 2em;
+        }
+        button.sendMessage
+        {
+            background: url('http://demo.drythemes.com/landerous/landerous_darkblue/images/send_message_btn.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            border: none;
+            font-family: 'Abel';
+            font-size: 18px;
+            width: 248px;
+            height: 31px;
+            vertical-align: middle;
+            cursor: pointer;
+            color: #FFFFFF;
+        }
+        button.sendMessage:hover
+        {
+            background-position: 0 100%;
+        }
+        @media screen and (max-width: 1150px){
+            div.about{
+                width: 100%;
+                font-size: 2em;
+                margin: 0;
+                padding: 0;
+            }
+            div.contactUs{
+                width: 100%;
+                font-size: 20px;
+                margin: 0;
+                padding: 0;
+                font-size: 20px;
+                display: table;
+            }
+            p.plainText{
+                font-size: 0.8em;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+            span.title{
+                font-size: 32px;
+            }
+            div.contactBackground{
+                background: url('http://themadrid.cl/static/media/img/background_contact.png');
+                background-repeat: repeat; 
+                width: 100%;
+                height: auto;
+            }
+            div.darkBlue{
+                padding-left: 0;
+            }
+            input.contactInput{
+                background: #ffffff;
+                width: 95%;
+                border-radius: 5px;
+                height: 3em;
+                font-size: 18px;
+            }
+            textarea.contactInput{
+                background: #ffffff;
+                width: 95%;
+                border-radius: 5px;
+                height: 3em;
+                font-size: 18px;
+                max-width: none;
+            }
+            button.sendMessage{
+                background: #0f417b;
+                border-radius: 5px;
+                width: 97%;
+            }
+            button.sendMessage:hover{
+                background: #235b9b;
+            }
+        }
         </style>
     </head>
     <body>
@@ -124,19 +251,8 @@
                     
                 </div>
             </div>
-            <figure style="
-    display: table;
-    position: relative;
-    margin: 0;
-    width: 100%;
-">
-                <div style="
-    display: table-cell;
-    position: relative;
-    vertical-align: middle;
-    width: 90%;
-    text-align: center;
-">
+            <figure style="display: table;position: relative;margin: 0;width: 100%;">
+                <div style="display: table-cell;position: relative;vertical-align: middle;width: 90%;text-align: center;">
                     <img src="http://demo.drythemes.com/landerous/landerous_darkblue/images/rocket.png" alt="ROCKET" class="floatRight"/>    
                 </div>
                 
@@ -161,8 +277,30 @@
                         También el servicio técnico es importante, ya que todos quieren estar en la web y estar en algunos momentos de manera offline puede ocasionar problemas en su flujo normal, por ende realizar mantenciones al sistema es importante para Ud.
                     </p>
                 </div>
-            
-                <div class="clear">&nbsp;</div>
+
+                <div class="contactUs collumn floatLeft leftSpacer">
+                    <span class="title">CONTACTAME</span>
+                    <div class="contactBackground">
+                        <ul style="list-style: none;margin: 0;padding: 0;">
+                            <li>
+                                <input class="contactInput required" type="text" name="contact_name" placeholder="Nombre" />
+                            </li>
+                            <li>
+                                <input class="contactInput required email" type="text" name="contact_email" placeholder="E-mail" />
+                            </li>
+                            <li>
+                                <input class="contactInput required" type="text" name="contact_subject" placeholder="Asunto" />
+                            </li>
+                            <li>
+                                <textarea class="contactInput required" name="contact_message" cols="28" rows="4" placeholder="Mensaje"></textarea>
+                            </li>
+                            <li>
+                                <button class="sendMessage" id="sendMessage">ENVIAR MENSAJE</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="wrapper blockCenter footer clear">
@@ -171,28 +309,15 @@
                 <a href="http://themadrid.cl">Madrid S.A.</a>.
             </div>
             <div class="floatRight" style="display:inline-block; vertical-align:top;">
-                <ul style="
-    list-style-type: none;
-">
-                    <li class="checkOut floatLeft" style="
-    display: inline-block;
-    vertical-align: top;
-
-"><img src="http://demo.drythemes.com/landerous/landerous_darkblue/images/check.png" alt="Check Out" /></li>
-                    <li class="menuItem floatLeft" style="
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 2em;
-">
+                <ul style="list-style-type: none;">
+                    <li class="checkOut floatLeft" style="display: inline-block;vertical-align: top;">
+                        <img src="http://demo.drythemes.com/landerous/landerous_darkblue/images/check.png" alt="Check Out" /></li>
+                    <li class="menuItem floatLeft" style="display: inline-block;vertical-align: top;margin-top: 2em;">
                         <a href="#" target="_blank">
                             <img src="http://demo.drythemes.com/landerous/landerous_darkblue/images/twitter.png" alt="Twitter" />
                         </a>
                     </li>
-                    <li class="menuItem floatLeft" style="
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 2em;
-">
+                    <li class="menuItem floatLeft" style="display: inline-block;vertical-align: top;margin-top: 2em;">
                         <a href="#" target="_blank">
                             <img src="http://demo.drythemes.com/landerous/landerous_darkblue/images/facebook.png" alt="Facebook" />
                         </a>

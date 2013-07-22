@@ -67,7 +67,7 @@ def contactValid(request):
 				# msg.attach_alternative(html_content, 'text/html')
 				# msg.send()
 
-				# send_mail(subject, html_content, from_email, to)
+				send_mail(subject, html_content, from_email, to)
 				return HttpResponse(json)
 				# return render_to_response('contenido/contacto.html', locals())
 
