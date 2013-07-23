@@ -9,7 +9,7 @@ from django.template import Context
 from django.shortcuts import render_to_response
 from forms import contactForm
 from django.utils import simplejson
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 from models import contact as contactModel
 
 
@@ -52,26 +52,22 @@ def contactValid(request):
 			contacto.con_subject = asunto
 			contacto.con_message = mensaje
 
-			contacto.save()
+			context_text = 'E-mail de TheMadrid.cl Nombre : ' + nombre  + ' E-mail : ' + email + ' Telefono : ' + str(telefono) + ' Asunto : ' + asunto + ' Mensaje : ' + mensaje
+			html_content = 'E-mail de TheMadrid.cl <br />Nombre : ' + nombre  + '<br />E-mail : ' + email + '<br />Telefono : ' + str(telefono) + '<br />Asunto : ' + asunto + '<br />Mensaje : ' + mensaje
 
 			if request.is_ajax():
 				errores_form = {'errors' : 'errors'}
 				json = simplejson.dumps(errores_form)
-				subject = 'Subjet from TheMadrid16 System contact'
-				text_content = 'This is a message to contact'
-				# html_content = '<h2>Data</h2><br />Name : ' + nombre + '<br />Subject : ' + asunto + '<br />Phone : ' + telefono + '<br />Mail : ' + email + '<br />Message : ' + mensaje
-				html_content = 'Message'
-				from_email = 'TheMadrid16@madrid16.cl'
-				to = 'm.madrid16@gmail.com'
-				# msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-				# msg.attach_alternative(html_content, 'text/html')
-				# msg.send()
-
-				send_mail(subject, html_content, from_email, to)
+				
+				subject, from_email, to = 'Contact From TheMadrid Service', 'contacto@themadrid.cl', 'm.madrid@themadrid.cl'
+				
+				msg = EmailMultiAlternatives(subject, context_text, from_email, [to])
+				msg.attach_alternative(html_content, "text/html")
+				msg.send()
+				contacto.save()
+			
 				return HttpResponse(json)
-				# return render_to_response('contenido/contacto.html', locals())
-
-			#return HttpResponseRedirect('http://www.google.cl')
+				
 			return render_to_response('contact.html', locals())
 
 		else:
