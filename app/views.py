@@ -81,3 +81,25 @@ def contactValid(request):
 
 def mantenimiento(request):
 	return render_to_response('mantenimiento.html', locals())
+
+def contact_mantenimiento(request):
+	
+	contacto = contactModel()
+	nombre = request.POST['nombre']
+	email = request.POST['email']
+	asunto = request.POST['asunto']
+	mensaje = request.POST['mensaje']
+	contacto.con_name = nombre
+	contacto.con_email = email
+	contacto.con_subject = asunto
+	contacto.con_message = mensaje
+	
+	if contacto.save():
+		errores_form = {'contacto' : 'ok'}
+	else:
+		errores_form = {'contacto' : 'not'}
+		
+	json = simplejson.dumps(errores_form)
+
+	return HttpResponse(json)
+	# return render_to_response('mantenimiento.html',locals())
