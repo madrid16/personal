@@ -98,8 +98,11 @@ def contact_mantenimiento(request):
 		errores_form = {'contacto' : 'ok'}
 	else:
 		errores_form = {'contacto' : 'not'}
-		
+
 	json = simplejson.dumps(errores_form)
 
 	return HttpResponse(json)
 	# return render_to_response('mantenimiento.html',locals())
+
+def sitemap(request):
+	return render_to_response('sitemap.xml')
