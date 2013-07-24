@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.themadrid\.cl$
+RewriteRule ^(.*)$ http://www.themadrid.cl/$1 [L,R=301]
