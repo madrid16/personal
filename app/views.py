@@ -14,24 +14,60 @@ from models import contact as contactModel
 
 
 def index_view(request):
+	current = 'inicio'
+	title = "Madrid S.A."
 	return render_to_response('index.html', locals())
 
 def inicio(request):
-	return render_to_response('contenido/content.html', locals())
+	current = 'inicio'
+	title = "Madrid S.A."
+	return render_to_response('index.html', locals())
 
 def contact(request):
+	current = 'contacto'
 	contacto = "Contáctame"
 	form = contactForm()
-	return render_to_response('contenido/contacto.html', locals())
+	title = "Contacto Madrid S.A."
+	return render_to_response('contact.html', locals())
 
 def nosotrosView(request):
-	return render_to_response('contenido/nosotros.html', locals())
+	current = 'nosotros'
+	title = "Nosotros Madrid S.A."
+	return render_to_response('us.html', locals())
 
 def proyectosView(request):
-	return render_to_response('contenido/proyectos.html', locals())
+	current = 'proyectos'
+	title = "Proyectos Madrid S.A."
+	return render_to_response('proyects.html', locals())
 
 def serviceView(request):
-	return render_to_response('contenido/servicios.html', locals())	
+	current = 'servicios'
+	title = "Servicios Madrid S.A."
+	return render_to_response('service.html', locals())	
+
+def serviceApp(request):
+	current = 'servicios'
+	active = 'app'
+	title = "Servicios | Aplicaciones Madrid S.A."
+	return render_to_response('service.html', locals())	
+
+def serviceMarketing(request):
+	current = 'servicios'
+	active = 'marketing'
+	title = "Servicios | Marketing Madrid S.A."
+	return render_to_response('service.html', locals())	
+
+def serviceMantencion(request):
+	current = 'servicios'
+	active = 'mantencion'
+	title = "Servicios | Mantenciones Madrid S.A."
+	return render_to_response('service.html', locals())	
+
+def serviceSolucion(request):
+	current = 'servicios'
+	active = 'solucion'
+	title = "Servicios | Soluciones TI Madrid S.A."
+	return render_to_response('service.html', locals())	
 
 def contactValid(request):
 	if request.method == 'POST':

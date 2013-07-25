@@ -1,13 +1,13 @@
 	<div class="contactoPage">
 		<article>
-			<img src="http://themadrid.cl/static/media/img/contact.png" style="float:left;" />
-			<h2 class="page-title">Pongase en Contacto</h2>
+			<img src="http://themadrid.cl/static/media/img/contact.png" style="float:left;" alt="contacto" />
+			<h1 class="page-title">Pongase en Contacto</h1>
 			<hr />
 			<p>Creamos hermosos sitios web profesionales, que puedan utilizarse, con mejor accesibilidad a la práctica y las directrices más recientes estándares web del W3C, lo que resulta en la semántica y amigable seo XHTML y CSS.</p>
 		</article>
 
 		<article>
-			<img src="http://themadrid.cl/static/media/img/information.png" style="float:left;" />
+			<img src="http://themadrid.cl/static/media/img/information.png" style="float:left;" alt="Informacion de contacto" />
 			<h2 class="page-title">Información de Contacto</h2>
 			<hr />
 			<p><span class="infoGreen">Dirección : </span> Maipú, Santiago <span> / </span> <span class="infoGreen"> Teléfono : </span> (09) 7470248 <span> / </span> <br />
@@ -17,8 +17,9 @@
 		<hr />
 
 		<div>
-	
+			
 			<form method="post" action="/contact" id="form_contact">
+				<a name="formularioContacto"></a>
 				{% csrf_token %}
 				{{ form }}
 				<div>
@@ -34,3 +35,6 @@
 		</div>
 		
 	</div>
+	<script>
+		jQuery(document).on('ready', initialize());
+	</script>

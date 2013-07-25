@@ -1,42 +1,7 @@
 jQuery(document).on('ready', function(){
-
-	jQuery('nav a').mouseup('click', function(){
-		var id = jQuery(this).attr('id');
-
-		var act = jQuery('nav').find('.current').attr('id');
-		if(id === act){
-			return false;
-		}else if(jQuery('#' + id).parent().parent().attr('id') == 'list-service'){
-			var service = jQuery(this).attr('id');
-			jQuery('.serviciosPage').find('.actived').attr('class' , 'unactived');
-			jQuery('div#' + service).attr('class' , 'actived');
-			return false;
-		}
-
-		listService();
-		jQuery.ajax({
-			url : '/' + id,
-			success : function(html){
-				jQuery( "#main" ).find('.' + act + 'Page').remove();
-				//jQuery( "#main" ).find('.' + act + 'Page').effect( 'blind', 'fast');
-				jQuery( "#main" ).append(html).effect('slide', 'slow');
-				changeClass(id);
-				if(id == "contacto"){
-					setTimeout(function(){
-      				initialize();
-					},1000);
-				}else if(id == "proyectos"){
-					scaleImage();
-					hoverImage();
-				}else if(id == "servicios"){
-					jQuery('ul#list-service').show();
-					jQuery('header').css('padding-bottom', '50px');
-				}
-			}
-		});
-
-	});
-
+	scaleImage();
+	hoverImage();
+	servicios();
 	jQuery('.social_media').find('a').hover(function(){
 		var src = jQuery(this).find('img').attr('title');
 		var img = 'http://themadrid.cl/static/media/img/' + src + '_hover.png'
@@ -95,31 +60,6 @@ jQuery(document).on('ready', function(){
 		});
 	});
 
-	jQuery('body').delegate('a#more', 'click', function(){
-		var id = jQuery(this).attr('data-id');
-		var act = jQuery('nav').find('.current').attr('id');
-		if (act == 'servicios') {
-			return false;
-		}
-
-		jQuery.ajax({
-			url : '/servicios',
-			success : function(html){
-				jQuery( "#main" ).find('.' + act + 'Page').remove();
-				jQuery( "#main" ).append(html).effect('slide', 'slow');
-				changeClass('servicios');
-				jQuery('ul#list-service').show();
-				jQuery('header').css('padding-bottom', '50px');
-
-				jQuery('.serviciosPage').find('.actived').attr('class', 'unactived');
-				jQuery('.serviciosPage').find('#' + id).attr('class', 'actived');
-				
-			}
-		});
-
-		return false;	
-	});
-
 });
 
 function hoverImage(){
@@ -146,6 +86,10 @@ function scaleImageOpacity(){
 function changeClass(id){
 	jQuery('.current').attr('class', 'link');
 	jQuery('#'+ id).attr('class', 'current');
+	if(id == 'servicios'){
+		jQuery('ul#list-service').show();
+		jQuery('header').css('padding-bottom', '50px');
+	}
 
 }
 
@@ -153,6 +97,33 @@ function listService(){
 	jQuery('ul#list-service').hide();
 	jQuery('header').css('padding-bottom', '10px');
 }
+
+function service(val){
+	// var service = jQuery(this).attr('id');
+	jQuery('.serviciosPage').find('.actived').attr('class' , 'unactived');
+	jQuery('div#' + val).attr('class' , 'actived');
+}
+
+function servicios(){
+	if(jQuery('.current').attr('id') != 'servicios')
+	{
+		jQuery('#liService').on('mouseenter', function(){
+		     jQuery('ul#list-service').slideDown('slow');
+		     jQuery('header').css('padding-bottom', '50px');
+		});
+
+		jQuery('#liService').on('mouseleave', function(){
+			jQuery('ul#list-service').slideUp();
+		    setTimeout(function(){
+		    	jQuery('header').css('padding-bottom', '10px');
+		    }, 500);
+		});
+	}else{
+		jQuery("#list-service").show();
+	}
+	
+}
+
 
 function initialize () {
 	var mapOptions = {
