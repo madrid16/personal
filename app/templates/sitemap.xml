@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset>
-	<url>
-		<loc>http://www.themadrid.cl/</loc>
-		<priority>1.0</priority>
-		<changefreq>monthly</changefreq>
-	</url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.themadrid.cl/index</loc>
+  <changefreq>monthly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/inicio</loc>
+  <changefreq>monthly</changefreq>
+  <priority>1.0</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/nosotros</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/proyectos</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/servicios</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/servicios/aplicaciones</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/servicios/marketing</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/servicios/mantencion</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/servicios/solucion</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://www.themadrid.cl/contacto</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
 </urlset>
