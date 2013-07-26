@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'app.views.mantenimiento', name='index_view'),
+    # url(r'^$', 'app.views.mantenimiento', name='index_view'),
     url(r'^inicio$', 'app.views.inicio', name='inicio'),
     url(r'^contacto$', 'app.views.contact', name='contact'),
     url(r'^contact$', 'app.views.contactValid', name='contactValid'),
@@ -16,7 +16,7 @@ urlpatterns = patterns('',
     url(r'^proyectos$', 'app.views.proyectosView', name='proyectosView'),
     url(r'^servicios$', 'app.views.serviceView', name='serviceView'),
     url(r'^mantenimiento$', 'app.views.mantenimiento', name='mantenimientoView'),
-    url(r'^index$', 'app.views.index_view', name='index'),
+    url(r'^$', 'app.views.index_view', name='index'),
     url(r'^contact_mantenimiento$', 'app.views.contact_mantenimiento', name='contact_mantenimiento'),
     url(r'^sitemap$', 'app.views.sitemap', name='sitemap'),
     url(r'^servicios/aplicaciones$', 'app.views.serviceApp', name='serviceApp'),
