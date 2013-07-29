@@ -16,11 +16,13 @@ from models import contact as contactModel
 def index_view(request):
 	current = 'inicio'
 	title = "Madrid S.A."
+	description = "Desarrollo de sistemas y aplicaciones web, servicios TI y consultoria para todo tipo de empresas."
 	return render_to_response('index.html', locals())
 
 def inicio(request):
 	current = 'inicio'
 	title = "Madrid S.A."
+	description = "Desarrollo de sistemas y aplicaciones web, servicios TI y consultoria para todo tipo de empresas."
 	return render_to_response('index.html', locals())
 
 def contact(request):
@@ -28,45 +30,53 @@ def contact(request):
 	contacto = "Contáctame"
 	form = contactForm()
 	title = "Contacto Madrid S.A."
+	description = "Cotiza tu proyecto, contactame para desarrollar tu sistema."
 	return render_to_response('contact.html', locals())
 
 def nosotrosView(request):
 	current = 'nosotros'
 	title = "Nosotros Madrid S.A."
+	description = "Madrid creado por Edgar Muñoz Madrid, empresa destinada al desarrollo web en la region, maipu, Chile."
 	return render_to_response('us.html', locals())
 
 def proyectosView(request):
 	current = 'proyectos'
 	title = "Proyectos Madrid S.A."
+	description = "Proyectos realizados en el tiempo para terceros como piedra azul o clinica davila y sistemas propios como foodmovil."
 	return render_to_response('proyects.html', locals())
 
 def serviceView(request):
 	current = 'servicios'
 	title = "Servicios Madrid S.A."
+	description = "Madrid ofrece los mejores servicio TI de la región, desarrollo de aplicaciones web en php o django, ademas de css3 y html5."
 	return render_to_response('service.html', locals())	
 
 def serviceApp(request):
 	current = 'servicios'
 	active = 'app'
 	title = "Servicios | Aplicaciones Madrid S.A."
+	description = "Desarrollos de aplicaciones web con responsive design y app mobile."
 	return render_to_response('service.html', locals())	
 
 def serviceMarketing(request):
 	current = 'servicios'
 	active = 'marketing'
 	title = "Servicios | Marketing Madrid S.A."
+	description = "Diseños web de calidad, incluyendo responsive design e interfaces limpias y usables."
 	return render_to_response('service.html', locals())	
 
 def serviceMantencion(request):
 	current = 'servicios'
 	active = 'mantencion'
 	title = "Servicios | Mantenciones Madrid S.A."
+	description = "Mantenciones de sistemas web, basados en php puro o realizados con un framework."
 	return render_to_response('service.html', locals())	
 
 def serviceSolucion(request):
 	current = 'servicios'
 	active = 'solucion'
 	title = "Servicios | Soluciones TI Madrid S.A."
+	description = "Soluciones TI para todo tipo de empresas."
 	return render_to_response('service.html', locals())	
 
 def contactValid(request):

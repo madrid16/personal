@@ -17,7 +17,6 @@
 		<hr />
 
 		<div>
-			
 			<form method="post" action="/contact" id="form_contact">
 				<a name="formularioContacto"></a>
 				{% csrf_token %}
@@ -26,12 +25,13 @@
 					<input id="btnContact" type="submit" name="btnContact" value="Contáctame" />
 				</div>
 			</form>
-	
+			
 		</div>
-		
 
-		<div>
-			<div id="mapa" style="width:100%;height:600px;"></div>
+		<div id="divContentMap">
+			
+			<div id="mapa" style="width:100%;"></div>
+	
 		</div>
 		
 	</div>
